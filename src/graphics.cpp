@@ -1,6 +1,4 @@
-# include "universal.h"
-
-using namespace std;
+# include "graphics.hpp"
 
 /*
 	function to display a menu of given options in array and return selected option

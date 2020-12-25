@@ -1,6 +1,4 @@
-# include "universal.h"
-
-using namespace std;
+#include "combinations.hpp"
 
 int global = 0;
 

@@ -1,32 +1,33 @@
-# include "universal.h"
+#include <iostream>
+#include <fstream>
 
-using namespace std;
+#include "settings.hpp"
 
-# define DEFAULT_NO_OF_GRADES 12
-# define DEFAULT_NO_OF_SECTIONS 4
-# define DEFAULT_NO_OF_COLUMNS 5
-# define DEFAULT_NO_OF_ROWS 5
-# define DEFAULT_NO_OF_SEATS_PER_TABLE 2
-# define DEFAULT_STUDENTS 40
-# define MENU_SIZE 8
+#define DEFAULT_NO_OF_GRADES 12
+#define DEFAULT_NO_OF_SECTIONS 4
+#define DEFAULT_NO_OF_COLUMNS 5
+#define DEFAULT_NO_OF_ROWS 5
+#define DEFAULT_NO_OF_SEATS_PER_TABLE 2
+#define DEFAULT_STUDENTS 40
+#define MENU_SIZE 8
 
 void flush_stream (){
-	cin.clear();
-	while (cin.get() != '\n') {
+	std::cin.clear();
+	while (std::cin.get() != '\n') {
 		continue;
 	}
 }
 
 void WRITE_DEFAULT_PROFILE (PROFILE &object){
-	fstream file;
-	file.open ("defaultprofile.dat", ios::out|ios::binary);
+	std::fstream file;
+	file.open ("defaultprofile.dat", std::ios::out|std::ios::binary);
 	file.write ((char *)&object, sizeof(object));
 	file.close();
 }
 
 void LOAD_DEFAULT_PROFILE (PROFILE &object){
-	fstream file;
-	file.open ("defaultprofile.dat", ios::in|ios::binary);
+	std::fstream file;
+	file.open ("defaultprofile.dat", std::ios::in|std::ios::binary);
 	if (!file){
 		object.name = "Default";
 		object.number_of_grades = DEFAULT_NO_OF_GRADES;
@@ -43,8 +44,8 @@ void LOAD_DEFAULT_PROFILE (PROFILE &object){
 				object.Grade[i].Classroom[j].input_ROOM_section(ch++);
 			}
 		}
-		ofstream file1;
-		file1.open ("defaultprofile.dat", ios::binary);
+		std::ofstream file1;
+		file1.open ("defaultprofile.dat", std::ios::binary);
 		file1.write ((char *)&object, sizeof(object));
 		file1.close();
 	}
@@ -57,17 +58,17 @@ void LOAD_DEFAULT_PROFILE (PROFILE &object){
 void REMOVE_FILE (PROFILE &object){
 start:
 	system("cls");
-	cout<<"\n\n\t====================================";
-	cout<<"\n\tAre you sure you want to reset? (y/n): ";
+	std::cout<<"\n\n\t====================================";
+	std::cout<<"\n\tAre you sure you want to reset? (y/n): ";
 	//char ch = _getche ();
 	char ch = '0';
-	cin >> ch;
+	std::cin >> ch;
 	if (ch == 'y' || ch == 'Y'){
 		remove ("defaultprofile.dat");
 		LOAD_DEFAULT_PROFILE (object);
-		cout<<"\n\nSETTINGS RESET";
+		std::cout<<"\n\nSETTINGS RESET";
 		//_getch();
-		cin >> ch;
+		std::cin >> ch;
 	}
 	else if (ch == 'n' || ch == 'N'){
 		return;

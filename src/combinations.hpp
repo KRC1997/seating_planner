@@ -1,9 +1,6 @@
-# ifndef _COMBINATIONS_H_
-# define _COMBINATIONS_H_
+# ifndef COMBINATIONS_HPP
+# define COMBINATIONS_HPP
 
-# include "universal.h"
-
-using namespace std;
 
 struct STUDENT{
 	int CLASS;

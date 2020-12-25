@@ -1,9 +1,7 @@
-# ifndef _SETTINGS_H_
-# define _SETTINGS_H_
+#ifndef SETTINGS_HPP
+#define SETTINGS_HPP
 
-# include "universal.h"
-
-using namespace std;
+#include <string>
 
 # define NUMBER_OF_grades 12
 # define DEFAULT_GRADE_MAX 15

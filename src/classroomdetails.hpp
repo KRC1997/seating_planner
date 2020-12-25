@@ -1,7 +1,7 @@
-# ifndef _CLASSROOMDETAILS_H_
-# define _CLASSROOMDETAILS_H_
+# ifndef CLASSROOMDETAILS_HPP
+# define CLASSROOMDETAILS_HPP
 
-# include "universal.h"
+
 using namespace std;
 
 /*

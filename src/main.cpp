@@ -1,8 +1,14 @@
-# include "universal.h"
+#include <iostream>
+#include <vector>
+#include <string>
 
-using namespace std;
+#include "classroomdetails.hpp"
+#include "combinations.hpp"
+#include "graphics.hpp"
+#include "help_about.hpp"
+#include "settings.hpp"
 
-char MAIN_MENU[][20] = {"CREATE ARRANGEMENT", "HELP", "ABOUT", "SETTINGS", "EXIT"};
+std::vector<std::string> MAIN_MENU = {"CREATE ARRANGEMENT", "HELP", "ABOUT", "SETTINGS", "EXIT"};
 char HEAD[20] = {"SEAT ARRANGER 1.0"};
 char FOOT[]={"PLEASE POINT TO CHOICE"};
 PROFILE Default;
@@ -44,7 +50,7 @@ menu:		//goto tag
 	int k = manager(Menu (ptr, 5, HEAD, FOOT));
 	if (k == 0){
 		//ch = _getch();
-		cin >> ch;
+		std::cin >> ch;
 		goto menu;
 	}
 	else if (k == 2){
@@ -52,11 +58,11 @@ menu:		//goto tag
 	}
 	else{
 		system("cls");
-		cout<<"\n\n\n\n\n\n\n\n\t\t\tThank you for using our services!!";
-		cout<<"\n\t\t\t      Hope to see you again!";
+		std::cout<<"\n\n\n\n\n\n\n\n\t\t\tThank you for using our services!!";
+		std::cout<<"\n\t\t\t      Hope to see you again!";
 	}
 	//ch = _getch();
-	cin >> ch;
+	std::cin >> ch;
 	delete [] ptr;
 	return 0;
 }

@@ -1,24 +1,26 @@
-# include "universal.h"
+#include <iostream>
+#include <fstream>
 
-using namespace std;
+#include "help_about.hpp"
+
 
 void help (){
 /*
 	system("cls");
 	cout<<"\n\n\t\tUNDER DEVELOPMENT";
 */
-	fstream file;
-	file.open("help.txt", ios::in);
+	std::fstream file;
+	file.open("help.txt", std::ios::in);
 	if(!file){
-		cout<<"help file not found";
+		std::cout<<"help file not found";
 		return;
 	}
 	char ch;
 	while (!file.eof()){
 		file.get(ch);
-		cout<<ch;
+		std::cout<<ch;
 	}
-	cout<<"Press ANY key to return: ";
+	std::cout<<"Press ANY key to return: ";
 	file.close();
 }
 
@@ -27,17 +29,17 @@ void about (){
 	system("cls");
 	cout<<"\n\n\t\tUNDER DEVELOPMENT";
 */
-	fstream file;
-	file.open("about.txt", ios::in);
+	std::fstream file;
+	file.open("about.txt", std::ios::in);
 	if(!file){
-		cout<<"about file not found";
+		std::cout<<"about file not found";
 		return;
 	}
 	char ch;
 	while (!file.eof()){
 		file.get(ch);
-		cout<<ch;
+		std::cout<<ch;
 	}
-	cout<<"Press ANY key to return: ";
+	std::cout<<"Press ANY key to return: ";
 	file.close();
 }
