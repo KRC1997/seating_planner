@@ -3,7 +3,6 @@
 using namespace std;
 
 
-
 char MAIN_MENU[][20] = {"CREATE ARRANGEMENT", "HELP", "ABOUT", "SETTINGS", "EXIT"};
 char HEAD[20] = {"SEAT ARRANGER 1.0"};
 char FOOT[]={"PLEASE POINT TO CHOICE"};
