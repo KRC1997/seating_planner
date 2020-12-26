@@ -19,16 +19,16 @@ void flush_stream (){
 
 void WRITE_DEFAULT_PROFILE (PROFILE &object){
 	fstream file;
-	file.open ("defaultprofile.dat", ios::out|ios::binary);
+	file.open ("defaultprofile.dat", ios::out, ios::binary);
 	file.write ((char *)&object, sizeof(object));
 	file.close();
 }
 
 void LOAD_DEFAULT_PROFILE (PROFILE &object){
 	fstream file;
-	file.open ("defaultprofile.dat", ios::in|ios::binary);
+	file.open ("defaultprofile.dat", ios::in, ios::binary);
 	if (!file){
-		object.name = "Default";
+		strcpy_s(object.name, "Default\0");
 		object.number_of_grades = DEFAULT_NO_OF_GRADES;
 		for (int i  = 0; i < object.number_of_grades; i++){
 			char ch = 'A';
@@ -59,15 +59,12 @@ start:
 	system("cls");
 	cout<<"\n\n\t====================================";
 	cout<<"\n\tAre you sure you want to reset? (y/n): ";
-	//char ch = _getche ();
-	char ch = '0';
-	cin >> ch;
+	char ch = _getche ();
 	if (ch == 'y' || ch == 'Y'){
 		remove ("defaultprofile.dat");
 		LOAD_DEFAULT_PROFILE (object);
 		cout<<"\n\nSETTINGS RESET";
-		//_getch();
-		cin >> ch;
+		_getch();
 	}
 	else if (ch == 'n' || ch == 'N'){
 		return;

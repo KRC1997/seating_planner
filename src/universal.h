@@ -5,13 +5,13 @@
 
 # include <iostream>
 # include <fstream>
-//# include <conio.h>
+# include <conio.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
 # include <string.h>
 # include <ctype.h>
-//# include <Windows.h>
+# include <Windows.h>
 # include <time.h>
 
 //	Custom Libraries

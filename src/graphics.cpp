@@ -19,8 +19,7 @@ int Menu (char **arr, int rows){
 				cout<<"\t\t|"<<arr[i]<<"\n";
 			}
 		}
-		//ch = _getch();
-		cin >> ch;
+		ch = _getch();
 
 		/*
 		ASCII of arrow keys
@@ -66,8 +65,7 @@ int Menu (char **arr, int rows, char *header){
 				cout<<"\t\t|"<<arr[i]<<"\n";
 			}
 		}
-		//ch = _getch();
-		cin >> ch;
+		ch = _getch();
 
 		/*
 		ASCII of arrow keys
@@ -114,8 +112,7 @@ int Menu (char **arr, int rows, char *header, char *footer){
 			}
 		}
 		cout<<"\n\t"<<footer<<"\n";
-		//ch = _getch();
-		cin >> ch;
+		ch = _getch();
 
 		/*
 		ASCII of arrow keys

@@ -12,8 +12,7 @@ void flush_stream ();
 
 class PROFILE{
 public:
-	//char name[50];
-	std::string name;
+	char name[50];
 	int number_of_grades;
 	GRADE Grade[DEFAULT_GRADE_MAX];
 
@@ -58,8 +57,7 @@ public:
 					cout<<"\t\t|Class: "<<Grade[i].grade<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -102,8 +100,7 @@ public:
 					cout<<"\t\t|Class: "<<Grade[i].grade<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -146,8 +143,7 @@ public:
 					cout<<"\t\t|Class: "<<Grade[i].grade<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -190,8 +186,7 @@ public:
 					cout<<"\t\t|Class: "<<Grade[i].grade<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -234,8 +229,7 @@ public:
 					cout<<"\t\t|Class: "<<Grade[i].grade<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys

@@ -305,8 +305,7 @@ void create_arrangements (PROFILE &object){
 		else{
 			cout<<"\t\t|DONE\n";
 		}
-		//ch = _getch();
-		cin >> ch;
+		ch = _getch();
 
 		/*
 		ASCII of arrow keys
@@ -390,11 +389,11 @@ choice:
 			cout<<"Do You Want to SAVE to file?(Y/N): ";
 			cin>> ch;
 			if (ch == 'y' || ch == 'Y'){
-				string name;
+				char name[50];
 				cout<<"Enter name of file: ";
 				flush_stream();
-				cin >> name;
-				name += ".txt";
+				gets_s(name);
+				strcat(name, ".txt");
 				ofstream output;
 				ifstream input;
 				output.open (name);

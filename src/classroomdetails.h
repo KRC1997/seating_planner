@@ -218,8 +218,7 @@ public:
 					cout<<"\t\t|Section: "<<Classroom[i].output_ROOM_section()<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -262,8 +261,7 @@ public:
 					cout<<"\t\t|Section: "<<Classroom[i].output_ROOM_section()<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -306,8 +304,7 @@ public:
 					cout<<"\t\t|Section: "<<Classroom[i].output_ROOM_section()<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
@@ -350,8 +347,7 @@ public:
 					cout<<"\t\t|Section: "<<Classroom[i].output_ROOM_section()<<"\n";
 				}
 			}
-			//ch = _getch();
-			cin >> ch;
+			ch = _getch();
 
 			/*
 			ASCII of arrow keys
