@@ -14,12 +14,9 @@ include_directories( ./include ./src ./libs )
 # target
 add_executable( 
     binary 
-    ./src/main.cpp 
-    ./src/classroomdetails.cpp 
-    ./src/combinations.cpp
-    ./src/graphics.cpp
-    ./src/help_about.cpp
-    ./src/settings.cpp
+    ./src/main.cpp
+    ./src/screens.cpp
+    ./src/unix_specific.cpp
 )
 
 # external libs
