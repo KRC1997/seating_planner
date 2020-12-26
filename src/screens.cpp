@@ -15,10 +15,26 @@
 #define CARIAGE_RETURN 10
 
 
+int take_char_input()
+{
+    char ch1, ch2, ch3;
+    ch1 = unix_specific::getch();
+    if ((ch1==27)) 
+    {
+        ch2 = unix_specific::getch();
+        ch3 = unix_specific::getch();
+        return ch3;
+    }
+    else 
+    {
+        return ch1;
+    }
+}
+
 int screens::draw_menu(std::vector<std::string> & menu_items, std::string & header)
 {
     int pointer = 0;
-	char ch1 = '0', ch2 = '0', ch3 = '0';
+	char ch;
 	while (true){
         system("clear"); // To clear the terminal window
         if (header.size() > 0)
@@ -34,19 +50,8 @@ int screens::draw_menu(std::vector<std::string> & menu_items, std::string & head
 				std::cout<<"\t\t|"<<menu_items[i]<<"\n";
 			}
 		}
-		ch1 = unix_specific::getch();
-        if (ch1 == CARIAGE_RETURN) {
-            system("clear");
-            return pointer;
-        }
-        ch2 = unix_specific::getch();
-        ch3 = unix_specific::getch();
-        
-		if (!(ch1==27)&&(ch2=91))
-        {
-            continue;
-        }
-        switch(ch3)
+		ch = take_char_input();
+        switch(ch)
         {
             case KEY_UP:
             {
