@@ -79,16 +79,60 @@ int screens::draw_menu(
             }
             case CARIAGE_RETURN:
             {
-                system(CLEAR_SCREEN);
                 return pointer;
             }
             default:
             {
-                system(CLEAR_SCREEN);
                 break;
             }
         }
 	}
+}
+
+void screens::draw_about()
+{
+    system(CLEAR_SCREEN); // To clear the terminal window
+    std::fstream file;
+	file.open("about.txt", std::ios::in);
+    char ch;
+	if( !file )
+    {
+		std::cout << "about file not found";
+	}
+    else 
+    {
+        while ( !file.eof() ){
+            file.get(ch);
+            std::cout << ch;
+        }
+        file.close();
+    }
+    std::cout << "Press ANY key to return... ";
+    ch = unix_specific::getch();
+	return;
+}
+
+void screens::draw_help()
+{
+    system(CLEAR_SCREEN); // To clear the terminal window
+    std::fstream file;
+	file.open("help.txt", std::ios::in);
+	char ch;
+	if( !file )
+    {
+		std::cout << "help file not found";
+	}
+	else 
+    {
+        while ( !file.eof() ){
+            file.get(ch);
+            std::cout << ch;
+        }
+        file.close();
+    }
+    std::cout << "Press ANY key to return... ";
+    ch = unix_specific::getch();
+	return;
 }
 
 void screens::draw_settings() 
@@ -115,48 +159,24 @@ void screens::draw_settings()
     }
     while(settings_menu_choice != settings_menu.size() - 1);
     return;
-} 
-
-void screens::draw_about()
-{
-    std::fstream file;
-	file.open("about.txt", std::ios::in);
-    char ch;
-	if( !file )
-    {
-		std::cout << "about file not found";
-	}
-    else 
-    {
-        while ( !file.eof() ){
-            file.get(ch);
-            std::cout << ch;
-        }
-        file.close();
-    }
-    std::cout << "Press ANY key to return... ";
-    ch = unix_specific::getch();
-	return;
 }
 
-void screens::draw_help()
+void screens::draw_create_arrangement()
 {
-    std::fstream file;
-	file.open("help.txt", std::ios::in);
-	char ch;
-	if( !file )
+    std::vector<std::string> create_arrangement_menu = {
+        "NUMBER OF CLASSES",
+		"EXIT SAVING CHANGES"
+    };
+	std::string header = "CREATE ARRANGEMENT";
+	std::string footer = "PLEASE POINT TO CHOICE";
+
+	int create_arrangement_menu_choice = 0;
+    do
     {
-		std::cout << "help file not found";
-	}
-	else 
-    {
-        while ( !file.eof() ){
-            file.get(ch);
-            std::cout << ch;
-        }
-        file.close();
+        create_arrangement_menu_choice = screens::draw_menu(
+            create_arrangement_menu, header, footer
+        );
     }
-    std::cout << "Press ANY key to return... ";
-    ch = unix_specific::getch();
-	return;
+    while(create_arrangement_menu_choice != create_arrangement_menu.size() - 1);
+    return;
 }

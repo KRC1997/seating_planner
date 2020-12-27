@@ -25,11 +25,13 @@ namespace screens
     );
     // New Screens will follow
 
-    void draw_settings();
-
     void draw_about();
 
     void draw_help();
+
+    void draw_settings();
+
+    void draw_create_arrangement();
 }
 
 
