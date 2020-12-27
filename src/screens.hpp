@@ -16,8 +16,20 @@
 */
 namespace screens
 {
-    int draw_menu(std::vector<std::string> & menu_items, std::string & header);
+    static std::string empty_str = std::string();
+
+    int draw_menu(
+        const std::vector<std::string> & menu_items, 
+        const std::string & header = empty_str,
+        const std::string & footer = empty_str
+    );
     // New Screens will follow
+
+    void draw_settings();
+
+    void draw_about();
+
+    void draw_help();
 }
 
 

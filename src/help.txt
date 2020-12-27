@@ -3,7 +3,7 @@
 |                                    HELP                                     |
 |                                                                             |
 -------------------------------------------------------------------------------
-|       SEAT ARANGER 1.0                                                      |
+|       SEAT ARANGER 2.0                                                      |
 |========================================                                     |
 | *The program works on the details entered into the settings tab. This forms |
 | the basis of the arrangements produced by the program.                      |
